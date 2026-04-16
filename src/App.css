@@ -1,0 +1,21 @@
+/* Optional animations for App entry */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-container > * {
+  animation: fadeInSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.app-container > *:nth-child(1) { animation-delay: 0.1s; }
+.app-container > *:nth-child(2) { animation-delay: 0.2s; }
+.app-container > *:nth-child(3) { animation-delay: 0.3s; }
+.app-container > *:nth-child(4) { animation-delay: 0.4s; }

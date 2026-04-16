@@ -1,0 +1,57 @@
+.bottom-nav-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 24px;
+  z-index: 100;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 440px; /* Aligns with app container constraint */
+  padding: 16px 24px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+  background: var(--color-bg-secondary);
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.nav-item:hover {
+  color: var(--color-text-primary);
+  transform: scale(1.1);
+}
+
+.nav-item.active {
+  color: var(--color-accent-primary);
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: -10px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-accent-primary);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 10px var(--color-accent-primary);
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

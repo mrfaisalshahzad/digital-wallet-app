@@ -1,0 +1,118 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  height: calc(100vh - 48px);
+}
+
+.auth-header {
+  margin-bottom: 48px;
+}
+
+.back-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-fast);
+}
+
+.auth-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-text-primary);
+}
+
+.auth-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 18px 16px 18px 48px;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-glass);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15);
+}
+
+.input-group input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+body.light-theme .input-group input {
+  background-color: transparent;
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -8px;
+}
+
+.forgot-password button {
+  font-size: 0.9rem;
+}
+
+.submit-btn {
+  margin-top: 16px;
+}
+
+.submit-btn.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.auth-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 24px;
+}
+
+.toggle-auth-btn {
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color var(--transition-fast);
+}
+
+.toggle-auth-btn:hover {
+  color: var(--color-accent-primary-hover);
+}

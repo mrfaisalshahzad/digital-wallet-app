@@ -1,0 +1,141 @@
+:root {
+  /* Color Palette - Premium Dark Theme with Vibrant Accents */
+  --color-bg-primary: #0a0a0d;
+  --color-bg-secondary: #14141a;
+  --color-bg-glass: rgba(255, 255, 255, 0.03);
+  --color-bg-glass-hover: rgba(255, 255, 255, 0.08);
+  --color-border-glass: rgba(255, 255, 255, 0.05);
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+
+  --color-accent-primary: #a855f7; /* Vibrant Purple */
+  --color-accent-primary-hover: #9333ea;
+  --color-accent-secondary: #3b82f6; /* Vibrant Blue */
+  --color-success: #10b981; /* Emerald Green */
+  --color-danger: #ef4444; /* Red */
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+  --gradient-card: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(168, 85, 247, 0.4);
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+}
+
+body.light-theme {
+  --color-bg-primary: #f4f4f6;
+  --color-bg-secondary: #ffffff;
+  --color-bg-glass: rgba(0, 0, 0, 0.03);
+  --color-bg-glass-hover: rgba(0, 0, 0, 0.08);
+  --color-border-glass: rgba(0, 0, 0, 0.1);
+
+  --color-text-primary: #121212;
+  --color-text-secondary: #6b7280;
+
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 20px rgba(168, 85, 247, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 480px; /* Mobile app constraint for desktop view */
+  background-color: var(--color-bg-secondary);
+  min-height: 100vh;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  overflow-x: hidden;
+}
+
+/* Scrollbar configuration for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-glass);
+  border-radius: var(--radius-md);
+}
+
+/* General Layout Utils */
+.app-container {
+  padding: 24px 20px 100px; /* Output bottom padding for nav */
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Typography Utils */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+/* Basic Button resets */
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+}

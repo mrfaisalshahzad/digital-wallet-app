@@ -1,0 +1,142 @@
+.wizard-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.wizard-steps-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.step-dot {
+  flex: 1;
+  height: 4px;
+  background-color: var(--color-border-glass);
+  margin-right: 8px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-normal);
+}
+
+.step-dot:last-child {
+  margin-right: 0;
+}
+
+.step-dot.active {
+  background-color: var(--color-accent-primary);
+}
+
+.wizard-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Password criteria checklist */
+.password-criteria {
+  background: var(--color-bg-glass);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.criteria-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.criteria-item.met {
+  color: var(--color-success);
+}
+
+/* OTP Styles */
+.otp-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.otp-box {
+  width: 60px;
+  height: 70px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid var(--color-border-glass);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.otp-box:focus {
+  border-color: var(--color-accent-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15);
+}
+
+body.light-theme .otp-box {
+  background-color: transparent;
+}
+
+.otp-box.error {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+/* Shake Animation */
+.shake {
+  animation: shakeAnimation 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shakeAnimation {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Welcome Step */
+.welcome-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  gap: 24px;
+}
+
+.success-icon-wrapper {
+  width: 100px;
+  height: 100px;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+  animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
